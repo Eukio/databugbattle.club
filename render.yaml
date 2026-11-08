@@ -1,0 +1,16 @@
+# Render Blueprint: New → Blueprint, pick this repo. Starter plan so the SQLite file lives on a persistent disk.
+services:
+  - type: web
+    name: datacenter-grid
+    runtime: node
+    plan: starter
+    buildCommand: echo "client is prebuilt in packages/client/dist"
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: DB
+        value: /var/data/dcg.sqlite
+    disk:
+      name: dcg-data
+      mountPath: /var/data
+      sizeGB: 1

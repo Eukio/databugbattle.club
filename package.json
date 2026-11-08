@@ -1,0 +1,19 @@
+{
+  "name": "datacenter-grid",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node packages/client/build.mjs",
+    "build:single": "node packages/client/build.mjs --single",
+    "start": "node --experimental-strip-types --disable-warning=ExperimentalWarning packages/server/src/main.ts",
+    "test": "node --experimental-strip-types --disable-warning=ExperimentalWarning --test packages/sim/test/*.test.ts && node --experimental-strip-types --disable-warning=ExperimentalWarning --test packages/server/test/*.test.ts",
+    "map-check": "node --experimental-strip-types packages/sim/scripts/map-check.ts",
+    "golden:generate": "node --experimental-strip-types packages/sim/scripts/golden.ts"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.0"
+  },
+  "engines": {
+    "node": ">=22.13"
+  }
+}

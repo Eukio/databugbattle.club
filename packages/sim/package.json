@@ -1,0 +1,11 @@
+{
+  "name": "sim",
+  "version": "0.1.0",
+  "type": "module",
+  "exports": "./src/index.ts",
+  "scripts": {
+    "test": "node --experimental-strip-types --disable-warning=ExperimentalWarning --test test/*.test.ts",
+    "map-check": "node scripts/map-check.ts",
+    "golden:generate": "node scripts/golden.ts"
+  }
+}

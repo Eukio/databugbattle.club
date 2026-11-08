@@ -1,0 +1,30 @@
+{
+  "id": "t3-land-bugs",
+  "title": "Land bugs and spread",
+  "width": 8, "height": 7,
+  "rows": [
+    "########",
+    "#..oooo#",
+    "#..oooo#",
+    "#Sooooo#",
+    "#..oooo#",
+    "#..oooo#",
+    "########"
+  ],
+  "owned": [
+    { "cell": [3, 1], "power": 10 },
+    { "cell": [3, 2], "power": 6 }
+  ],
+  "fog": false,
+  "randomBugs": false,
+  "scriptedBugs": [{ "turn": 3, "cell": [3, 5], "health": 4 }],
+  "turnSeconds": 2,
+  "goal": { "type": "cureScripted" },
+  "hints": [
+    { "on": "start", "text": "Land earns a little power every 12 turns, but only while it connects to a healthy DC." },
+    { "on": "bugSpawned", "text": "A land bug. It freezes the cell and, every 8 turns, spreads into a neighbor that is no stronger than it is. Cells stronger than the bug act as firewalls." },
+    { "on": "curable", "text": "The glow means the cure window is open: cure now, before it spreads in 3 turns. Send at least its health from S along the middle row." },
+    { "on": "spread", "text": "It spread. The new bug is weaker but immune for 5 turns. Cure the parent first, and raise the cells around the child." },
+    { "on": "complete", "text": "All clear. Thin land is easy to infect; strong corridors stop bugs before they start." }
+  ]
+}

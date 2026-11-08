@@ -1,0 +1,29 @@
+{
+  "id": "t2-safe-level",
+  "title": "The safe level and protection",
+  "width": 8, "height": 4,
+  "rows": [
+    "########",
+    "#SooT..#",
+    "#......#",
+    "########"
+  ],
+  "owned": [
+    { "cell": [1, 1], "power": 14 },
+    { "cell": [1, 2], "power": 5 },
+    { "cell": [1, 3], "power": 1 },
+    { "cell": [1, 4], "power": 6 }
+  ],
+  "fog": false,
+  "randomBugs": false,
+  "scriptedBugs": [{ "turn": 4, "cell": [1, 4], "health": 3 }],
+  "turnSeconds": 2,
+  "goal": { "type": "cureScripted" },
+  "hints": [
+    { "on": "start", "text": "Your DCs are linked through land. A link is only as strong as its weakest cell." },
+    { "on": "bugSpawned", "text": "T has a bug. It is protected only if its link is stronger than the bug, and the 1 next to T makes it too weak. Select S and step right twice: Auto carries power through without stripping the cells it passes." },
+    { "on": "protected", "text": "Protected. T keeps producing and nothing drains. Bugs grow, so keep corridors at the safe level." },
+    { "on": "curable", "text": "The bug is curable now. Send at least its health into T from the cell next to it." },
+    { "on": "complete", "text": "Cured. Strong corridors buy you time; cures finish the job." }
+  ]
+}

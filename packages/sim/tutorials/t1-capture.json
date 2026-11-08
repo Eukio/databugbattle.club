@@ -1,0 +1,30 @@
+{
+  "id": "t1-capture",
+  "title": "Capture and the queue",
+  "width": 8, "height": 8,
+  "rows": [
+    "########",
+    "#S.....#",
+    "#...1..#",
+    "#..##..#",
+    "#..##..#",
+    "#......#",
+    "#2.....#",
+    "########"
+  ],
+  "owned": [{ "cell": [1, 1], "power": 24 }],
+  "dcCosts": { "1": 10, "2": 12 },
+  "fog": false,
+  "randomBugs": false,
+  "scriptedBugs": [],
+  "turnSeconds": 2,
+  "goal": { "type": "ownDCs", "count": 3 },
+  "hints": [
+    { "on": "start", "text": "This is your data center. Click it." },
+    { "on": "select", "text": "Press WASD or the arrow keys once per step, or drag a path. Steer to the DC marked 10. The numbers on the path show what will arrive." },
+    { "on": "queued", "text": "Moves happen 2 per turn. Q clears the whole queue." },
+    { "on": "captured", "text": "Captured. Auto mode kept 4 at home: that's the **safe level** in the top bar. Never drain a DC below it." },
+    { "on": "turn:5", "text": "The DC marked 12 is 5 steps away, so you need about 21 at S. Your DCs make 2 power a turn. Wait for it, then go." },
+    { "on": "complete", "text": "In real games, fog hides the map. You only see cells next to your land, and grey blocks in the fog may be mountains or DCs. Expand to find out." }
+  ]
+}
